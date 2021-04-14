@@ -1,7 +1,7 @@
 class Prenda {
     var estado
     var precioBase
-    var tipoDePrenda
+    var property tipoDePrenda
 
     method precio() {
         return estado.precioModificado(precioBase)

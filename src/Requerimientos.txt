@@ -1,0 +1,2 @@
+1)   El sistema debe poder informar el precio de venta y tipo de una prenda
+2)   El sistema debe poder entregar la ganancia de un determinado dia
