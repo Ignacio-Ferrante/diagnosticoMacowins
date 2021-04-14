@@ -6,10 +6,6 @@ class Prenda {
     method precio() {
         return estado.precioModificado(precioBase)
     }
-
-    method tipo() {
-        return tipoDePrenda
-    }
 }
 
 object nueva {

@@ -1,0 +1,71 @@
+@startuml
+package Prendas <<Frame>> {
+class Prenda{
+    tipoDePrenda
+    precioBase
+
+    precio()   
+}
+
+interface estado{
+    precioModificado(precioBase)
+}
+
+class Nueva{
+    calcularPrecio(precioBase)
+}
+
+class Promocion{
+    descuentoPromocion
+    precioModificado(precioBase)
+}
+
+class Liquidacion{
+    calcularPrecio(precioBase)
+}
+}
+package Ventas <<Frame>> {
+class Venta{
+    fechaDeVenta
+    prendasVendidas
+
+    agregarPrenda(unaPrenda)
+    ganancia()
+}
+
+interface metodoDePago{
+    recargo()
+}
+
+class Tarjeta{
+    cantidadDeCuotas
+    coeficiente
+
+    recargo()
+}
+
+class Efectivo{
+    recargo()
+}
+
+class Macowins{
+    ventas
+
+    ganancia(unDia)
+    realizarVenta(venta)
+}
+}
+
+Prenda --> estado
+Nueva ..|> estado
+Promocion ..|> estado
+Liquidacion ..|> estado
+
+Venta --> metodoDePago
+Tarjeta ..|> metodoDePago
+Efectivo ..|> metodoDePago
+Macowins ..> Venta
+
+
+Venta --> Prenda
+@enduml

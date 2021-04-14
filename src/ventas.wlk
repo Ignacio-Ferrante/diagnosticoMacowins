@@ -3,10 +3,6 @@ class Venta {
     var fechaDeVenta
     var metodoDePago
 
-    method prendasVendidas() {
-        return prendasVendidas
-    }
-
     method fechaDeVenta() {
         return fechaDeVenta
     }
@@ -17,6 +13,10 @@ class Venta {
 
     method ganancia() {
         return self.precioPorPrendasVendidas() + metodoDePago.recargo(self.precioPorPrendasVendidas())
+    }
+    
+    method agregarPrenda(unaPrenda) {
+    	prendasVendidas.add(unaPrenda)
     }
 }
 
